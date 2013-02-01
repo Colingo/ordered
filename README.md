@@ -9,8 +9,17 @@ Insert DOM elements into a container in order
 ## Example
 
 ```js
+var ordered = require("ordered")
 
+var insert = ordered(containerElem)
+
+insert("someKey", someElem)
+insert("someOtherKey", someElem)
+insert(data.sortKey, Widget(data))
 ```
+
+The elements will be inserted into the `containerElem` in order
+    of the key you pass as first argument
 
 ## Installation
 
