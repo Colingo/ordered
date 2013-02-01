@@ -1,6 +1,6 @@
 {
   "name": "ordered",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Insert DOM elements into a container in order",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
