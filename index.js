@@ -13,12 +13,12 @@ function Ordered(parent) {
         })[0]
         var target = hash[after] || null
 
-        if (target === null) {
-            append(parent, elem)
-        } else {
-            before(target, elem)
-        }
-
         hash[key] = elem
+
+        if (target === null) {
+            return append(parent, elem)
+        } else {
+            return before(target, elem)
+        }
     }
 }
