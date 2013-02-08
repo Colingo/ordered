@@ -12,10 +12,12 @@ test("inserts things in order", function (assert) {
     var four = elem("four")
 
     var insert = Ordered(container)
-    insert("4", { view: four })
+    var o = insert("4", { view: four })
     insert("2", two)
     insert("3", three)
     insert("1", one)
+
+    assert.equal(o.view, four)
 
     console.log("childNOdes", container.childNodes)
     assert.equal(container.childNodes.length, 4)

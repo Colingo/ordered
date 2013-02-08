@@ -7,14 +7,13 @@ function Ordered(parent) {
     var hash = {}
 
     return function insert(key, elem) {
-        elem = view(elem)
         var keys = Object.keys(hash).sort()
         var after = keys.filter(function (other) {
             return other > key
         })[0]
         var target = hash[after] || null
 
-        hash[key] = elem
+        hash[key] = view(elem)
 
         if (target === null) {
             return append(parent, elem)
