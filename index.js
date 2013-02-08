@@ -7,6 +7,7 @@ function Ordered(parent) {
     var hash = {}
 
     return function insert(key, elem) {
+        elem = view(elem)
         var keys = Object.keys(hash).sort()
         var after = keys.filter(function (other) {
             return other > key
@@ -21,4 +22,12 @@ function Ordered(parent) {
             return before(target, elem)
         }
     }
+}
+
+function view(data) {
+    if (data && data.view && data.view.nodeType) {
+        return data.view
+    }
+
+    return data
 }
