@@ -9,7 +9,7 @@ function Ordered(parent) {
     return function insert(key, elem) {
         var keys = Object.keys(hash).sort()
         var after = keys.filter(function (other) {
-            return other > key
+            return other > key && hash[other].parentNode !== null
         })[0]
         var target = hash[after] || null
 
